@@ -1,6 +1,6 @@
 #!/bin/sh
 
-COMMIT=$(git rev-parse --short HEAD)
+COMMIT=$(git rev-parse HEAD)
 
 if [ -z "${COMMIT}" ]; then
     echo "Error: Unable to determine the current commit hash."
@@ -17,7 +17,7 @@ fi
 echo "Commit: ${COMMIT}"
 echo "Version: ${VERSION}"
 
-RPMBUILD=build/rpmbuild
+RPMBUILD=$(pwd)/build/rpmbuild
 mkdir -p ${RPMBUILD}/{SOURCES,SPECS,SRPMS}
 
 SPEC_OUT="${RPMBUILD}/SPECS/kandle.spec"
@@ -29,7 +29,7 @@ sed \
 
 rm -f ${RPMBUILD}/SRPMS/*
 
-rpmbuild --define="_topdir ${RPMBUILD}" --undefine=_disable_source_fetch -bs "${SPEC_OUT}"
+rpmbuild --define="_topdir ${RPMBUILD}" --undefine=_disable_source_fetch -ba "${SPEC_OUT}"
 SRPM_KICAD=$(find ${RPMBUILD}/SRPMS/ -name "kicad-${VERSION}*.src.rpm")
 
 set +x

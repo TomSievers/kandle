@@ -6,12 +6,12 @@ Release:        1.git%{commit0}%{?dist}
 Summary:        KiCAD Component Handler CLI
 
 License:        MIT
-URL:            https://github.com/HarveyBates/kandle
-Source0:        https://github.com/HarveyBates/kandle/archive/%{commit0}.tar.gz
+URL:            https://github.com/TomSievers/kandle
+Source0:        https://github.com/TomSievers/kandle/archive/%{commit0}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  ninja-build
-BuildRequires:  gcc-c++
+BuildRequires:  clang-devel
 
 %description
 
@@ -20,13 +20,12 @@ A CLI that handles external components in a KiCad project by automatically impor
 It supports files downloaded from several vendors such as: SnapEDA, Ultra Librarian and Component Search Engine
 
 %prep
-%autosetup
-
+%setup -q -n kandle-%{commit0}
 
 %build
 
 %cmake -G Ninja \
-    -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    -DCMAKE_BUILD_TYPE=Release
 
 %cmake_build
 
