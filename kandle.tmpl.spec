@@ -35,7 +35,7 @@ It supports files downloaded from several vendors such as: SnapEDA, Ultra Librar
 
 %files
 %attr(0755, root, root) %{_bindir}/*
-%license LICENSE
+%license LICENCE
 
 %changelog
 * Tue Jun 10 2025 tom
