@@ -28,6 +28,8 @@ case "$state" in
       '-l:Specify a component library name (e.g. n-channel-mosfet)'
       'help:Show help'
       '-h:Show help'
+      '-v:Show version information'
+      'version:Show version information'
     )
     _describe 'Commands' commands
     ;;
