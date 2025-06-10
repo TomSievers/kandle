@@ -33,7 +33,7 @@
 #include "eschema/legacy.hpp"
 
 class Symbol {
-    char buffer[512];
+    char buffer[2048];
     static const int AUX_BUF_SIZE = 512;
     char aux_buffer[AUX_BUF_SIZE];
     std::string output_filename;
