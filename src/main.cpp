@@ -46,12 +46,21 @@ int main(int argc, char** argv) {
                           "E.g. op-amps for an LM358 IC.",
              cxxopts::value<std::string>())
 
-            ("h,help", "Display help information.");
+            ("h,help", "Display help information.")
+            
+            ("v,version", "Display version information.",
+             cxxopts::value<bool>());
+
 
     auto result = options.parse(argc, argv);
 
     if (result.count("help")) {
         std::cout << options.help() << std::endl;
+        exit(0);
+    }
+
+    if (result.count("version")) {
+        std::cout << "Kandle version " VERSION << std::endl;
         exit(0);
     }
 
