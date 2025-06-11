@@ -1,5 +1,5 @@
 Name:           kandle
-Version:        0.1
+Version:        0.2
 Release:        1%{?dist}
 Summary:        KiCAD Component Handler CLI
 
@@ -36,4 +36,7 @@ It supports files downloaded from several vendors such as: SnapEDA, Ultra Librar
 %license LICENCE
 
 %changelog
+* Wed Jun 11 2025 TomSievers <tom.sievers13@gmail.com> 0.2-1
+- new package built with tito
+
 
