@@ -3,7 +3,11 @@ cmake_minimum_required(VERSION 3.19.0)
 # Set C standard to use
 set(CMAKE_CXX_STANDARD 17)
 
-project(kandle LANGUAGES C CXX VERSION 0.1.0)
+project(kandle LANGUAGES C CXX)
+
+include(cmake/KandleVersion.cmake)
+
+message(STATUS "Kandle version: ${PROJECT_VERSION}")
 
 option(BUILD_ZSH_COMPLETIONS "Build zsh auto-completions" OFF)
 
